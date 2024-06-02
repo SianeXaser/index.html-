@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Lâmpadas</title>
+    <style>
+        .compartimento {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .lampada {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .ligada {
+            background-color: yellow;
+        }
+
+        .desligada {
+            background-color: gray;
+        }
+
+        .botao {
+            padding: 5px 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Controle de Lâmpadas</h1>
+
+    <div class="compartimento">
+        <h2>Sala</h2>
+        <div class="lampada desligada" id="sala"></div>
+        <button class="botao" onclick="ligar('sala')">Ligar</button>
+        <button class="botao" onclick="desligar('sala')">Desligar</button>
+    </div>
+
+    <div class="compartimento">
+        <h2>Quarto</h2>
+        <div class="lampada desligada" id="quarto"></div>
+        <button class="botao" onclick="ligar('quarto')">Ligar</button>
+        <button class="botao" onclick="desligar('quarto')">Desligar</button>
+    </div>
+
+    <div class="compartimento">
+        <h2>Cozinha</h2>
+        <div class="lampada desligada" id="cozinha"></div>
+        <button class="botao" onclick="ligar('cozinha')">Ligar</button>
+        <button class="botao" onclick="desligar('cozinha')">Desligar</button>
+    </div>
+
+    <div class="compartimento">
+        <h2>Casa de Banho</h2>
+        <div class="lampada desligada" id="casaBanho"></div>
+        <button class="botao" onclick="ligar('casaBanho')">Ligar</button>
+        <button class="botao" onclick="desligar('casaBanho')">Desligar</button>
+    </div>
+
+    <script>
+        function ligar(id) {
+            document.getElementById(id).classList.remove("desligada");
+            document.getElementById(id).classList.add("ligada");
+        }
+
+        function desligar(id) {
+            document.getElementById(id).classList.remove("ligada");
+            document.getElementById(id).classList.add("desligada");
+        }
+    </script>
+</body>
+</html>
